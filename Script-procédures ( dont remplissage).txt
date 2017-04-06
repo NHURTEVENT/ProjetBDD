@@ -1,0 +1,710 @@
+
+-- recette à 5 ingrédients
+
+    DELIMITER |
+    CREATE PROCEDURE AjoutRecette5(
+        IN `Nom potion` VARCHAR(30), 
+
+        IN `Premier ingrédient` VARCHAR(30),
+        IN `Quantité 1er ingrédient`INT(2),
+        IN `Fraicheur minimum 1er ingrédient`INT(3),
+        IN `Fraicheur maximum 1er ingrédient`INT(3) , 
+
+        IN `Deuxième ingrédient` VARCHAR(30) ,
+        IN `Quantité 2eme ingrédient`INT(2),
+        IN `Fraicheur minimum 2eme ingrédient`INT(3) ,
+        IN `Fraicheur maximum 2eme ingrédient`INT(3) , 
+
+        IN `Troisième ingrédient` VARCHAR(30),
+        IN `Quantité 3eme ingrédient`INT(2),
+        IN `Fraicheur minimum 3eme ingrédient`INT(3) , 
+        IN `Fraicheur maximum 3eme ingrédient`INT(3) , 
+
+        IN `Quatrième ingrédient` VARCHAR(30) , 
+        IN `Quantité 4eme ingrédient`INT(2),
+        IN `Fraicheur minimum 4eme ingrédient`INT(3) , 
+        IN `Fraicheur maximum 4eme ingrédient`INT(3) , 
+
+        IN `Cinquième ingrédient` VARCHAR(30),
+        IN `Quantité 5eme ingrédient`INT(2),
+        IN `Fraicheur minimum 5eme ingrédient`INT(3) ,
+        IN `Fraicheur maximum 5eme ingrédient`INT(3) , 
+
+        IN Diluant VARCHAR(30) ,
+        IN Température INT(3) )
+        #IN `Nom Inventeur` VARCHAR(30),
+        #IN `Prénom Inventeur` VARCHAR(30),
+        #IN `Numéro de permis`INT(4) )
+
+
+    BEGIN
+
+    INSERT INTO propositionrecette VALUES 
+    (`Nom potion`, `Premier ingrédient`, Diluant, 1, `Fraicheur minimum 1er ingrédient`, `Fraicheur maximum 1er ingrédient`, `Quantité 1er ingrédient`, Température),
+    (`Nom potion`, `Deuxième ingrédient`, Diluant, 2, `Fraicheur minimum 2eme ingrédient`, `Fraicheur maximum 2eme ingrédient`, `Quantité 2eme ingrédient`, Température),
+    (`Nom potion`, `Troisième ingrédient`, Diluant, 3, `Fraicheur minimum 3eme ingrédient`, `Fraicheur maximum 3eme ingrédient`, `Quantité 3eme ingrédient`, Température),
+    (`Nom potion`, `Quatrième ingrédient`, Diluant, 4, `Fraicheur minimum 4eme ingrédient`, `Fraicheur maximum 4eme ingrédient`, `Quantité 4eme ingrédient`, Température),
+    (`Nom potion`, `Cinquième ingrédient`, Diluant, 5, `Fraicheur minimum 5eme ingrédient`, `Fraicheur maximum 5eme ingrédient`, `Quantité 5eme ingrédient`, Température);
+
+
+    END; |
+
+    -- recette à 4 ingrédients
+
+  #  DELIMITER |
+    CREATE PROCEDURE AjoutRecette4(
+        IN `Nom potion` VARCHAR(30), 
+
+        IN `Premier ingrédient` VARCHAR(30),
+        IN `Quantité 1er ingrédient`INT(2),
+        IN `Fraicheur minimum 1er ingrédient`INT(3),
+        IN `Fraicheur maximum 1er ingrédient`INT(3) , 
+
+        IN `Deuxième ingrédient` VARCHAR(30) ,
+        IN `Quantité 2eme ingrédient`INT(2),
+        IN `Fraicheur minimum 2eme ingrédient`INT(3) ,
+        IN `Fraicheur maximum 2eme ingrédient`INT(3) , 
+
+        IN `Troisième ingrédient` VARCHAR(30),
+        IN `Quantité 3eme ingrédient`INT(2),
+        IN `Fraicheur minimum 3eme ingrédient`INT(3) , 
+        IN `Fraicheur maximum 3eme ingrédient`INT(3) , 
+
+        IN `Quatrième ingrédient` VARCHAR(30) , 
+        IN `Quantité 4eme ingrédient`INT(2),
+        IN `Fraicheur minimum 4eme ingrédient`INT(3) , 
+        IN `Fraicheur maximum 4eme ingrédient`INT(3) , 
+
+
+        IN Diluant VARCHAR(30) ,
+        IN Température INT(3) )
+        #IN `Nom Inventeur` VARCHAR(30),
+        #IN `Prénom Inventeur` VARCHAR(30),
+        #IN `Numéro de permis`INT(4) )
+
+
+    BEGIN
+
+    INSERT INTO propositionrecette VALUES 
+    (`Nom potion`, `Premier ingrédient`, Diluant, 1, `Fraicheur minimum 1er ingrédient`, `Fraicheur maximum 1er ingrédient`, `Quantité 1er ingrédient`, Température),
+    (`Nom potion`, `Deuxième ingrédient`, Diluant, 2, `Fraicheur minimum 2eme ingrédient`, `Fraicheur maximum 2eme ingrédient`, `Quantité 2eme ingrédient`, Température),
+    (`Nom potion`, `Troisième ingrédient`, Diluant, 3, `Fraicheur minimum 3eme ingrédient`, `Fraicheur maximum 3eme ingrédient`, `Quantité 3eme ingrédient`, Température),
+    (`Nom potion`, `Quatrième ingrédient`, Diluant, 4, `Fraicheur minimum 4eme ingrédient`, `Fraicheur maximum 4eme ingrédient`, `Quantité 4eme ingrédient`, Température);
+
+
+    END; |
+
+    -- Recette 3 ingrédients
+
+   # DELIMITER |
+    CREATE PROCEDURE AjoutRecette3(
+        IN `Nom potion` VARCHAR(30), 
+
+        IN `Premier ingrédient` VARCHAR(30),
+        IN `Quantité 1er ingrédient`INT(2),
+        IN `Fraicheur minimum 1er ingrédient`INT(3),
+        IN `Fraicheur maximum 1er ingrédient`INT(3) , 
+
+        IN `Deuxième ingrédient` VARCHAR(30) ,
+        IN `Quantité 2eme ingrédient`INT(2),
+        IN `Fraicheur minimum 2eme ingrédient`INT(3) ,
+        IN `Fraicheur maximum 2eme ingrédient`INT(3) , 
+
+        IN `Troisième ingrédient` VARCHAR(30),
+        IN `Quantité 3eme ingrédient`INT(2),
+        IN `Fraicheur minimum 3eme ingrédient`INT(3) , 
+        IN `Fraicheur maximum 3eme ingrédient`INT(3) , 
+
+
+        IN Diluant VARCHAR(30) ,
+        IN Température INT(3) )
+        #IN `Nom Inventeur` VARCHAR(30),
+        #IN `Prénom Inventeur` VARCHAR(30),
+        #IN `Numéro de permis`INT(4) )
+
+
+    BEGIN
+
+    INSERT INTO propositionrecette VALUES 
+    (`Nom potion`, `Premier ingrédient`, Diluant, 1, `Fraicheur minimum 1er ingrédient`, `Fraicheur maximum 1er ingrédient`, `Quantité 1er ingrédient`, Température),
+    (`Nom potion`, `Deuxième ingrédient`, Diluant, 2, `Fraicheur minimum 2eme ingrédient`, `Fraicheur maximum 2eme ingrédient`, `Quantité 2eme ingrédient`, Température),
+    (`Nom potion`, `Troisième ingrédient`, Diluant, 3, `Fraicheur minimum 3eme ingrédient`, `Fraicheur maximum 3eme ingrédient`, `Quantité 3eme ingrédient`, Température);
+
+    END; |
+
+    -- recette 2 ingrédients
+
+   # DELIMITER |
+    CREATE PROCEDURE AjoutRecette2(
+        IN `Nom potion` VARCHAR(30), 
+
+        IN `Premier ingrédient` VARCHAR(30),
+        IN `Quantité 1er ingrédient`INT(2),
+        IN `Fraicheur minimum 1er ingrédient`INT(3),
+        IN `Fraicheur maximum 1er ingrédient`INT(3) , 
+
+        IN `Deuxième ingrédient` VARCHAR(30) ,
+        IN `Quantité 2eme ingrédient`INT(2),
+        IN `Fraicheur minimum 2eme ingrédient`INT(3) ,
+        IN `Fraicheur maximum 2eme ingrédient`INT(3) , 
+
+
+        IN Diluant VARCHAR(30) ,
+        IN Température INT(3) )
+        #IN `Nom Inventeur` VARCHAR(30),
+        #IN `Prénom Inventeur` VARCHAR(30),
+        #IN `Numéro de permis`INT(4) )
+
+
+    BEGIN
+
+    INSERT INTO propositionrecette VALUES 
+    (`Nom potion`, `Premier ingrédient`, Diluant, 1, `Fraicheur minimum 1er ingrédient`, `Fraicheur maximum 1er ingrédient`, `Quantité 1er ingrédient`, Température),
+    (`Nom potion`, `Deuxième ingrédient`, Diluant, 2, `Fraicheur minimum 2eme ingrédient`, `Fraicheur maximum 2eme ingrédient`, `Quantité 2eme ingrédient`, Température);
+    END; |
+
+    -- recette 1 ingrédient
+
+   # DELIMITER |
+    CREATE PROCEDURE AjoutRecette1(
+        IN `Nom potion` VARCHAR(30), 
+
+        IN `Premier ingrédient` VARCHAR(30),
+        IN `Quantité 1er ingrédient`INT(2),
+        IN `Fraicheur minimum 1er ingrédient`INT(3),
+        IN `Fraicheur maximum 1er ingrédient`INT(3) , 
+
+
+
+        IN Diluant VARCHAR(30) ,
+        IN Température INT(3) )
+        #IN `Nom Inventeur` VARCHAR(30),
+        #IN `Prénom Inventeur` VARCHAR(30),
+        #IN `Numéro de permis`INT(4) )
+
+
+    BEGIN
+
+    INSERT INTO propositionrecette VALUES 
+    (`Nom potion`, `Premier ingrédient`, Diluant, 1, `Fraicheur minimum 1er ingrédient`, `Fraicheur maximum 1er ingrédient`, `Quantité 1er ingrédient`, Température);
+
+    END; |
+
+    -- pourtester
+
+
+
+    # CALL AjoutRecette('potion de test',3,'ender eye',1,NULL,50,'Blaze powder',3,NULL,NULL, 'Slimeball',2,12,40,'',NULL,NULL,NULL,'',NULL,NULL,NULL,'Water',50);
+
+
+    -- valider
+
+
+ #   DELIMITER |
+    CREATE PROCEDURE ValiderRecette( Recette VARCHAR(30))
+
+    BEGIN
+
+    INSERT INTO préparationpotion
+    SELECT *
+    FROM propositionrecette 
+    WHERE propositionrecette.Potion LIKE Recette;
+
+
+    DELETE FROM propositionrecette
+    WHERE propositionrecette.Potion LIKE Recette;
+    END;|
+
+    -- supprimer
+
+
+ #   DELIMITER |
+    CREATE PROCEDURE SupprimerRecette( Recette VARCHAR(30))
+
+    BEGIN
+
+
+    DELETE FROM propositionrecette
+    WHERE propositionrecette.Potion LIKE Recette;
+    END;|
+
+    -- Consulter les commandes d'un client
+
+DELIMITER |
+CREATE PROCEDURE `CommandeClient`(IN IdentifiantClient INT(4))
+BEGIN
+
+SELECT * FROM commande
+WHERE commande.IDClient LIKE IdentifiantClient;
+
+END |
+
+
+    -- sauvegarde des recettes
+
+ #   DELIMITER |
+    CREATE PROCEDURE `BackUpRecette`()
+    BEGIN
+
+    DELETE FROM backup.corbeillepréparationpotion;
+    DELETE FROM backup.corbeillepréparationonguent;
+
+    INSERT INTO backup.corbeillepréparationpotion
+    SELECT *
+    FROM backup.préparationpotion;
+
+    INSERT INTO backup.corbeillepréparationonguent
+    SELECT * 
+    FROM backup.préparationonguent;
+
+    DELETE FROM backup.préparationpotion; 
+    DELETE FROM backup.préparationonguent;
+
+    INSERT INTO backup.préparationpotion
+    SELECT * 
+    FROM projectbdd.préparationpotion;
+
+    INSERT INTO backup.préparationonguent
+    SELECT * 
+    FROM projectbdd.préparationonguent;
+
+
+    END;|
+
+    -- afficher le stock d'un ingrédient
+
+
+    CREATE PROCEDURE StockIngrédient()
+	BEGIN
+    SELECT *
+    FROM stockingrédient;
+	END |
+    -- trigger d'update du stock
+
+    CREATE TRIGGER UpdateStockIngrédient
+    AFTER UPDATE
+    ON stockingrédient
+    FOR EACH ROW
+    BEGIN
+    CALL StockIngrédient();
+	END |
+    -- Suppresion d'un ingrédient arrivé à expiration
+
+   # DELIMITER |
+    CREATE TRIGGER `ExpirationIngrédient` 
+    BEFORE UPDATE ON `stockingrédient`
+    FOR EACH ROW 
+    BEGIN
+    DELETE 
+    FROM stockingrédient 
+    WHERE DATEDIFF( NOW(), stockingrédient.`DateArrivée` ) >stockingrédient.FraîcheurMax; 
+    END|
+
+    -- corbeille stockingrédient
+
+  #  DELIMITER |
+    CREATE TRIGGER `CorbeilleStockIngrédient` 
+    BEFORE DELETE ON `stockingrédient` 
+    FOR EACH ROW 
+    BEGIN 
+        CALL CorbeilleStockIngrédient( OLD.Ingrédient, OLD.DateArrivée, OLD.QuantitéEnStock,OLD.FraîcheurMax); 
+    END;|
+
+    -- décrémente l stcok d'ingrédient à l'envoi d'une commande
+  #  DELIMITER |
+    CREATE TRIGGER UpdateStockCommande
+    AFTER UPDATE ON commande
+    FOR EACH ROW
+    BEGIN
+    UPDATE stockingrédient, commande
+
+    SET QuantitéEnStock = QuantitéEnStock - commande.Quantité 
+    WHERE stockingrédient.Ingrédient 
+    LIKE commande.Ingrédient AND commande.StatutCommande LIKE 'Confirmée';
+
+
+    UPDATE commande
+    SET commande.StatutCommande = 'Archivée' 
+    WHERE commande.StatutCommande LIKE 'Confirmée'; 
+    END; |
+
+CREATE PROCEDURE RemplirBDD()
+BEGIN
+
+-- Client
+
+DROP TABLE IF EXISTS ClientBuffer;
+
+CREATE TABLE IF NOT EXISTS ClientBuffer (
+	NomComplet VARCHAR(60)
+);
+
+INSERT INTO ClientBuffer (NomComplet)
+VALUES ('Cedric Ambroise'),('Jeremy Marnix'),('Gaston Arthur'),('Gennadi Isay'),('Marcelo Randall'),('Whitney Christian'),('Wayne Sylvestre'),('Kenton Gervais'),('Siemen Dillon'),('Douglas Jurgen'),('Dougal Isidore'),('Denis Pierce'),('Achille Dominicus'),('Lovell Pere'),('Timotheus Silvester'),('Rian Laurence'),('Willem Otto'),('Dominicus Arsène'),('Jarvis Heath'),('Coy Jewel'),('Julius Garnett'),('Harmon Warren'),('Gaëtan Lauchlan'),('David Finley'),('Théodore Carson'),('Duncan Louis'),('Roland Eachann'),('Lowell Travis'),('Tadg Dorian'),('Vernon Isaiah'),('Darren Islay'),('Merrill Branden'),('Giles Joël'),('Donald Lindsay'),('Denis Alexis'),('Anderson Ariel'),('Milo Morgan'),('Ainsley Esteve'),('Rollo Toby'),('Marius Reinier'),('Andreu Denton'),('Blair Éric'),('Ace Winfred'),('Clinton Romà'),('Peter Jason'),('Garry Millard'),('Jurriaan Dominic'),('Osborn Deòrsa'),('Filippus Alden'),('Isaiah Angel'),('Stéphane Roger'),('Rhett Ramsey'),('Merlyn Tijmen'),('Frederik Laurentin'),('Adolph Davis'),('Donovan Léo'),('Erik Bertrand'),('Prince Angelique'),('Ivor Chantal'),('Lindsey Frank'),('Justin Haydée'),('Kristal Buck'),('Feline Florianne'),('Michele Alanna'),('Sweeney Nicéphore'),('Lavina Lindsay'),('Milo Blanche'),('Valorie Elliot'),('Clement Freeman'),('Fabienne Eve'),('Julie Barnabas'),('Diann Leo'),('Adelbert Miriam'),('Lorraine Isadore'),('Prisca Sherie'),('Destiny Ellery'),('Grant Gordon'),('Miles Crawford'),('Fionntan Bernat'),('Fionnghuala Duncan'),('Raynard Sofie'),('Claire Elwin'),('Findlay Esther'),('Chuck Norris'),('Èric Octavia'),('Odelia Oswald'),('Jacobine Slàine'),('Newton Anna'),('Finella Garnet'),('Zula Bertrand'),('Kenya Sergi'),('Alasdair Seraphina'),('Christine Marius'),('Stefanie Madonna'),('Marine Lepen'),('Edwina Judith'),('Audley Zola'),('Alban Martine'),('Ira Daniell'),('Scot Deòrsa'),('Dolores Randolph'),('Sabrina Agathe'),('Darth Vader'),('Ross Carla'),('Jourdain Levi'),('Irma Jennifer'),('Terence Robert'),('Feline Quinn'),('Kylian Christine'),('Anselm Anna'),('Maria Aurèle'),('John Smith'),('Barthélémy Roxanne'),('Titus Elliott'),('Lachlan Loraine'),('Bob Marley'),('Camilla Georgina'),('Eilionoir Tabatha'),('Vivien Ùna'),('Elfreda Ramsay'),('Madlyn Laura'),('Frank Phyliss'),('Daenerys Targaryen'),('Jade Wiley'),('Jocelyn Tadhg'),('Deborah Judocus'),('Chrystal Jesse'),('Brady Cyrielle'),('Antonia Luvinia'),('Capucine Keefe'),('Nova Elspeth'),('Eloise Candis'),('Bruce Willis'),('Graham Uilleam'),('Marin Richelle'),('Georges Tasgall'),('Alexis Alasdair'),('Malcolm Kerri'),('Zoë Armelle'),('Sten Magdalena'),('Jochem Fergus'),('Rene Augustus'),('Keith Baxter'),('Iron Man'),('Krystal Alexia'),('Quinn Nicéphore'),('Ambrose Alexandra'),('Beulah Ezekiel'),('Munroe Germain'
+);
+
+INSERT INTO Client(NomClient, PrenomClient) 
+SELECT RIGHT(NomComplet, LENGTH(NomComplet) - LOCATE(' ', NomComplet)) , LEFT(NomComplet, LOCATE(' ', NomComplet))
+FROM Clientbuffer;
+
+DROP TABLE ClientBuffer;
+
+-- Commande
+
+
+
+-- PrepaPotion
+
+INSERT INTO préparationpotion VALUES ('Potion Of Instant Health','Nether Wart','Water','1',NULL,NULL,'1','80'),
+('Potion Of Instant Health','Ghast Tear','Water','2',NULL,NULL,'1','80'),
+('Potion Of Instant Health','Glowstone Dust','Water','3',NULL,NULL,'1','80'),
+
+('Potion Of Swiftness','Nether Wart','Water','1',NULL,NULL,'1','99'),
+('Potion Of Swiftness','Sugar','Water','2',NULL,NULL,'1','99'),
+('Potion Of Swiftness','Glowstone Dust','Water','3',NULL,NULL,'1','99'),
+
+('Potion Of Poison','Nether Wart','Water','1',NULL,NULL,'1','20'),
+('Potion Of Poison','Spider Eye','Water','2',NULL,NULL,'1','20'),
+('Potion Of Poison','Glowstone Dust','Water','3',NULL,NULL,'1','20'),
+
+('Potion Of Harming','Nether Wart','Water','1',NULL,NULL,'1','20'),
+('Potion Of Harming','Spider Eye','Water','2',NULL,NULL,'1','20'),
+('Potion Of Harming','Fermented Spider Eye','Water','3',NULL,NULL,'1','20'),
+
+('Potion Of Strength','Nether Wart','Water','1',NULL,NULL,'1','90'),
+('Potion Of Strength','Blaze Powder','Water','2',NULL,NULL,'1','90'),
+('Potion Of Strength','Glowstone Dust','Water','3',NULL,NULL,'1','90'),
+
+('Potion Of Fire Resistance','Nether Wart','Water','1',NULL,NULL,'1','100'),
+('Potion Of Fire resistance','Magma Cream','Water','2',NULL,NULL,'1','100'),
+('Potion Of Fire resistance','Glowstone Dust','Water','3',NULL,NULL,'1','100'),
+
+('Potion Of Slowness','Nether Wart','Water','1',NULL,NULL,'1','20'),
+('Potion Of Slowness','Sugar','Water','2',NULL,NULL,'1','20'),
+('Potion Of Slowness','Fermented Spider Eye','Water','3',NULL,NULL,'1','10'),
+
+('Potion Of Bravery','Emerald','Chloridric Acid','1',NULL,NULL,'1','40'),
+('Potion Of Bravery','Blaze Powder','Chloridric Acid','2',NULL,NULL,'3','40'),
+('Potion Of Bravery','Garlic','Chloridiric Acid','3',NULL,NULL,'2','40'),
+
+('Potion Of Flight','Feather','Redbull','1',NULL,NULL,'3','20'),
+('Potion Of Flight',"Butterfly's Wing",'Redbull','2',NULL,NULL,'5','20'),
+('Potion Of Flight','East Wind','Redbull','3',NULL,NULL,'2','20'),
+
+('Potion Of Charisma',"Bear claws",'Honey','3',NULL,NULL,'2','80'),
+('Potion Of Charisma',"Dragon's scales",'Honey','2',NULL,NULL,'1','80'),
+('Potion Of Charisma','Glowstone Dust','Honey','3',NULL,NULL,'5','80'),
+
+('Potion Of Wall Protection','Tacos','Mineral Oil','1',NULL,NULL,'5','40'),
+('Potion Of Wall Protection','Brick','Mineral Oil','2',NULL,NULL,'3','40'),
+('Potion Of Wall Protection','Golden Nugget','Mineral Oil','3',NULL,NULL,'2','40'),
+
+('Potion Of Love','Fire Salt','Honey','1',NULL,NULL,'1','40'),
+('Potion Of Love','Moon Sugar','Honey','2',NULL,NULL,'1','40'),
+('Potion Of Love',"Willow's leaf",'Honey','3',NULL,NULL,'2','40'),
+('Potion Of Love','Slimebal','Honey',4,NULL,NULL,1,40),
+
+('Potion Of Smite','Void salt',"Human's blood",'1',NULL,NULL,'1','50'),
+('Potion Of Smite','Sword Shard',"Human's Blood",'2',NULL,NULL,'1','50'),
+('Potion Of Smite',"Dragon's Tear","Human's Blood",'3',NULL,NULL,'1','50'),
+
+('Potion Of Cure Disease','Chorus Fruit',"Water",'1',NULL,NULL,'1','40'),
+('Potion Of Cure Disease','Slimeball','Water','2',NULL,NULL,'2','40'),
+('Potion Of Cure Disease','Phoenix Tear','Water','3',NULL,NULL,'2','40');
+
+-- Potions
+
+INSERT INTO potion(Potion, PrixPotion)
+VALUES ("Potion Of Bravery", 35
+),("Potion Of Charisma", 40
+),("Potion Of Cure Disease", 40
+),("Potion Of Fire resistance", 40
+),("Potion Of Flight", 65
+),("Potion Of Harming", 50
+),("Potion Of Instant Health", 65
+),("Potion Of Love", 40
+),("Potion Of Poison", 35
+),("Potion Of Slowness", 45
+),("Potion Of Smite", 45
+),("Potion Of Strength", 40
+),("Potion Of Swiftness", 30
+),("Potion Of Wall Protection", 50);
+
+-- PrepaOnguent
+
+DROP TABLE IF EXISTS PréparationOnguent;
+
+CREATE TABLE IF NOT EXISTS PréparationOnguent 
+SELECT potion AS onguent, ingrédient, OrdreIngrédient, FraicheurMinIngrédient, FraicheurMaxIngrédient, QuantitéIngrédient
+FROM préparationpotion;
+
+UPDATE préparationonguent
+SET onguent = CONCAT('Onguent ', RIGHT(préparationonguent.onguent, LENGTH(préparationonguent.onguent) - LOCATE(' ', préparationonguent.onguent)));
+
+-- Onguent
+
+DROP TABLE IF EXISTS Onguent;
+
+CREATE TABLE IF NOT EXISTS Onguent
+SELECT potion AS Onguent, PrixPotion AS PrixOnguent
+FROM potion;
+
+UPDATE Onguent
+SET onguent = CONCAT('Onguent ', RIGHT(onguent.onguent, LENGTH(onguent.onguent) - LOCATE(' ', onguent.onguent)));
+
+-- Ingredient
+
+INSERT INTO Ingrédient
+VALUES ('Nether Wart',5),('Blaze Powder',12),('Blaze Rod',20),('Ghast Tear',40),('Glowstone Dust',8),('Redstone Dust',8),('Glistering Melon',18),('Golden Carrot',10),('Rabbit Foot',14),('Sugar',5),('Spider Eye',10),('Fermented Spider eye',20),('Magma Cream',15),('Pufferfish',18),('Clownfish',8),('Gunpowder',5),('Red Mushroom',5),('Brown Mushroom',5),('Pumpkin Stem',3),('Melon Stem',3),('Slimeball',8),('Ink sack',3),('Bone Meal',4),('Cookie',8),('Rotten Flesh',2),('Eye of ender',35),('Ender Pearl',15),('Fire Charge',10),('Poisonous Potato',3),('Nether star',200),('Prismarine Shard',20),('Prismarine Crystals',30),('Chorus Fruit',18),('Totem Of Undying',85),('Shulker Shell',20),('Iron Nugget',3),('Gold Nugget',5),('Chernobylite',25),('Frost Salts',15),('Moon Sugar',25),('Skeever Hide',5),('Mudcrab Chitin',15),('Bear Claws',20),('Hanging Moss',7),('Briar Heart',40),('Creep Cluster',3),('Red Mountain Flower',3),('Garlic',2),('Salt Pile',5),('Eye of Sabre Cat',18),('Hawk Feathers',4),('Vampire Dust',80),('Namima\'s Rot',4),('Thistle Branch',12),('Snowberry',3),('Nirnroot',15),('Tundra Cotton',20),('Luna Moth Wing',25),('Burnt Wood',1),('Grass Pod',3),('River Betty',2),('Spriggan Sapling',50),('Dragon\'s tongue',150),('Falmer Ear',45),('Spider egg',4),('Canis Root',6),('Slaughterfish Egg',6),('Nightshade',5),('Small Antlers',5),('Chicken Egg',1),('Deathbell',3),('Imp Stool',7),('Skeever Tail',4),('Bat Wing',6),('Snake Venom',25
+),('feather',3),('East Wind',35),('Sword Shard',15),('Tacos',3),('Brick',2),("Butterfly's Wing",4);
+
+-- StockIngredient
+
+INSERT INTO StockIngrédient(Ingrédient,DateArrivée, FraîcheurMax)
+VALUES ('Nether Wart','2017-03-31',30),('Blaze Powder','2017-03-31',NULL),('Blaze Rod','2017-03-31',NULL),('Ghast Tear','2017-03-31',NULL),('Glowstone Dust','2017-03-31',NULL),('Redstone Dust','2017-03-31',NULL),('Glistering Melon','2017-03-31',7),('Golden Carrot','2017-03-31',20),('Rabbit Foot','2017-03-31',75),('Sugar','2017-03-31',200),('Spider Eye','2017-03-31',5),('Fermented Spider eye','2017-03-31',150),('Magma Cream','2017-03-31',30),('Pufferfish','2017-03-31',2),('Clownfish','2017-03-31',2),('Gunpowder','2017-03-31',NULL),('Red Mushroom','2017-03-31',75),('Brown Mushroom','2017-03-31',75),('Pumpkin Stem','2017-03-31',60),('Melon Stem','2017-03-31',60),('Slimeball','2017-03-31',15),('Ink sack','2017-03-31',30),('Bone Meal','2017-03-31',NULL),('Cookie','2017-03-31',7),('Rotten Flesh','2017-03-31',NULL),('Eye of ender','2017-03-31',NULL),('Ender Pearl','2017-03-31',NULL),('Fire Charge','2017-03-31',NULL),('Poisonous Potato','2017-03-31',15),('Nether star','2017-03-31',NULL),('Prismarine Shard','2017-03-31',NULL),('Prismarine Crystals','2017-03-31',NULL),('Chorus Fruit','2017-03-31',15),('Totem Of Undying','2017-03-31',NULL),('Shulker Shell','2017-03-31',NULL),('Iron Nugget','2017-03-31',NULL),('Gold Nugget','2017-03-31',NULL),('Chernobylite','2017-03-31',NULL),('Frost Salts','2017-03-31',NULL),('Moon Sugar','2017-03-31',200),('Skeever Hide','2017-03-31',75),('Mudcrab Chitin','2017-03-31',75),('Bear Claws','2017-03-31',300),('Hanging Moss','2017-03-31',30),('Briar Heart','2017-03-31',15),('Creep Cluster','2017-03-31',75),('Red Mountain Flower','2017-03-31',3),('Garlic','2017-03-31',30),('Salt Pile','2017-03-31',NULL),('Eye of Sabre Cat','2017-03-31',7),('Hawk Feathers','2017-03-31',NULL),('Vampire Dust','2017-03-31',NULL),('Namima','2017-03-31',15),('Thistle Branch','2017-03-31',200),('Snowberry','2017-03-31',7),('Nirnroot','2017-03-31',15),('Tundra Cotton','2017-03-31',NULL),('Luna Moth Wing','2017-03-31',50),('Burnt Wood','2017-03-31',15),('Grass Pod','2017-03-31',75),('River Betty','2017-03-31',15),('Spriggan Sapling','2017-03-31',30),("Dragon's tongue",'2017-03-31',NULL),('Falmer Ear','2017-03-31',150),('Spider egg','2017-03-31',7),('Canis Root','2017-03-31',150),('Slaughterfish Egg','2017-03-31',7),('Nightshade','2017-03-31',2),('Small Antlers','2017-03-31',NULL),('Chicken Egg','2017-03-31',7),('Deathbell','2017-03-31',2),('Imp Stool','2017-03-31',NULL),('Skeever Tail','2017-03-31',30),('Bat Wing','2017-03-31',30),('Snake Venom','2017-03-31',75);
+
+-- Diluant
+
+INSERT INTO diluant VALUES ('Water','0'),('Mineral Oil','8'),("Dragon's Blood",'75'),("Human's blood",'15'),('Honey','10'),('Milk','5'),('Vinegar','6'),('Chloridric Acid','12'),("Goblin's snort",'25');
+
+-- StockDiluant
+
+
+
+-- Recipiant
+
+INSERT INTO récipient VALUES ('Test Tube',1,2),('Ampoule',2,4),('Flask',10,5),('Pot',15,5),('Caldron',50,25);
+
+-- StockRecipiant
+
+
+
+-- Inventeur
+
+DROP TABLE IF EXISTS InventeurBuffer;
+
+CREATE TABLE IF NOT EXISTS InventeurBuffer (
+	NomComplet VARCHAR(60)
+);
+
+INSERT INTO InventeurBuffer(NomComplet)
+VALUES ("Elias De Kelliwic'h"),('Harry Potter'),('Branden Winona'),('Kory Marshal'),('Diantha Isiah'),('Martina Michaela'),('Hugh Glenna'),('Peneloppe Fillon'),('Eugène Adelbert'),('Vivian Leopold'),('Roy Washington'),('Herdeu Déhdeu'),('Reid Dale'),('Brock Obama'),('Achille Nelson'),('Julie Alma'),('Rosemarie Marjory'),('Léonide Theodorus'),('Grego Smith'),('Trinity Logan'),('Lachina Isabel'),('Ealasaid Hanna'),('James Bond'),('Alexia Randolf'),('Meritxell Mìcheal'),('Buzz Lightyear'),('Francesca Isadore'),('Chanel Aubrey'),('Chantal Eloi'),('Tadhg Esme'),('Sylvain Jason'),('Dove Fingall'),('Beverley Myrtle'),('Martin Garrix'),('Delilah Rena'),('Prince Silver'),('Claud Trinity'),(' Filippus Cairbre'),('Makus Persson'),('Torcuil Donald'),('Moyra Gaetane'),('Donald Trumpet'),('Juliana Marceline'),('Karl Melba'),('Ethelbert Francesc'),('Steve Aoki'),('Llúcia Urbain'),('Clarence Darrell'),('Harland Carson'),('Berenice Justin'),('Brittany Mélanie'),('Ulysses Tanner'),('Irma Roselyn'),('Ewald Sara'),("Merlin L'Enchanteur"),('Severus Snape'),('Debra Kylie'),('Anakin Skywalker'),('Warren Gary'),('Jessy James'),('Hermione Granger'),('Morgana La Fey'),('Albius Dumbledore');
+
+INSERT INTO Inventeur(NomInventeur, PrenomInventeur) 
+SELECT RIGHT(NomComplet, LENGTH(NomComplet) - LOCATE(' ', NomComplet)) , LEFT(NomComplet, LOCATE(' ', NomComplet))
+FROM Inventeurbuffer;
+
+DROP TABLE InventeurBuffer;
+
+-- Fournisseur
+
+INSERT INTO fournisseur VALUES 
+(9125,'Gavin','Aurora'),
+(9781,'Arn','Edison'),
+(2172,'Warren','Fabrice'),
+(8054,'Ariel','Austin'),
+(5412,'Aria','Tera'),
+(7151,'Kendrick','Monique'),
+(9308,'Leith','Adam'),
+(3775,'Sydne','Sidonie'),
+(3400,'Lavender','Skyler'),
+(4811,'Morgana','Rebekah'),
+(8394,'Simone','Myriam'),
+(5898,'Patricia','Fred'),
+(8719,'Brittania','Arlie'),
+(9000,'Lane','Dene'),
+(3586,'Gena','Mélanie'),
+(9437,'Jasmin','Blake'),
+(2293,'Romaine','Bertille'),
+(6874,'Avery','Fulk'),
+(3480,'Petra','Lucile'),
+(3127,'Juliet','Marvyn'),
+(8739,'Giselle','Harriet'),
+(1995,'Coral','Nancy'),
+(5954,'Kristeen','Dexter'),
+(8539,'Christabel','Joelle'),
+(5449,'Armel','Janae'),
+(8402,'Alyssa','Nicole'),
+(9709,'Sukie','Terri'),
+(3913,'Brandie','Malinda'),
+(6736,'Roly','Newton'),
+(7654,'Olyvia','Sherman'),
+(7443,'Buck','Mitchell'),
+(4110,'Elijah','Alberte'),
+(8811,'Benedict','Dirk'),
+(9544,'Rebekah','Hartley'),
+(7282,'Albine','Rickey'),
+(2681,'Jackson','Cearra'),
+(7441,'Corrie','Natalie'),
+(7328,'Gina','Jenessa'),
+(1556,'Dorian','Winfred'),
+(8711,'Télesphore','Loyd'),
+(1983,'Huguette','Rafferty'),
+(9342,'Eglantine','Eulalie'),
+(3816,'Briscoe','Peregrine'),
+(7080,'Roscoe','Robin'),
+(8807,'Christophe','Jim'),
+(8588,'Jeffrey','Victor'),
+(9345,'Myrtle','Valary'),
+(9435,'Nydia','André'),
+(6663,'Faith','Prudence'),
+(2403,'Tammy','Wenona');
+
+-- pairage fournisseur-ingrédient
+
+INSERT INTO fournitureingrédient VALUES 
+(7080,'Bat Wing' ),
+(3586,'Bear Claws' ),
+(1995,'Bidule' ),
+(8394,'Blaze Powder'), 
+(8711,'Blaze Rod' ),
+(9709,'Bone Meal' ),
+(5449,'Briar Heart' ),
+(3775,'Brick' ),
+(3480,'Brown Mushroom'),
+(8807,'Burnt Wood' ),
+(3127,"Butterfly's Wing"), 
+(6663,'Canis Root' ),
+(2293,'Chernobylite' ),
+(8739,'Chicken Egg' ),
+(7654,'Chorus Fruit' ),
+(9435,'Clownfish' ),
+(2172,'Cookie'),
+(8539,'Creep Cluster'), 
+(2681,'Deathbell' ),
+(1556,"Dragon's scales"), 
+(8054,"Dragon's Tear" ),
+(9000,"Dragon's Tongue" ),
+(3400,'East Wind' ),
+(9544,'Emerald'),
+(4811,'Ender Pearl'), 
+(9437,'Eye of ender' ),
+(4110,'Eye of Sabre Cat'), 
+(7441,'Falmer Ear' ),
+(7328,'Feather' ),
+(9345,'Fermented Spider eye'), 
+(9342,'Fire Charge '), 
+(8811,'Fire Salt '), 
+(6874,'Frost Salts '), 
+(9308,'Garlic '), 
+(9781,'Ghast Tear'), 
+(8402,'Glistering Melon'),  
+(8588,'Glowstone Dust'), 
+(3913,'Golden Carrot'), 
+(1983,'Gold Nugget '), 
+(6736,'Grass Pod '), 
+(8719,'Gunpowder '), 
+(7443,'Hanging Moss '), 
+(7151,'Hawk Feathers '), 
+(7282,'Imp Stool'), 
+(3816,'Ink Sack '), 
+(5898,'Iron Nugget'), 
+(9125,'Luna Moth Wing'), 
+(5954,'Magma Cream'), 
+(5412,'Melon Stem '), 
+(2403,'Moon Sugar '),
+(0398,'Phoenix Tear'),
+(0268,'River Betty'),
+(0222,'Red Mushroom'),
+(0629,'Nightshade'),
+(0245,'Salt Pile'),
+(0952,'Snake Venom'),
+(0519,'Nirnroot'),
+(0649,'Spider egg'),
+(0841,'Rabbit Foot'),
+(0497,'Mudcrab Chitin'), 
+(0583,'Poisonus Potato '),
+(0944,'Sword Shard '),
+(0261,'Small Antlers '),
+(0417,'Snowberry'),
+(0169,'Shulker Shell'), 
+(0480,'Pumkin Stem '),
+(0394,'Rotten Flesh '),
+(0355,'Vampire Dust '),
+(0577,'Nether Star '),
+(0935,'Namima '),
+(0953,'Thistle Branch '), 
+(0650,'Prismarine Shard'),
+(0649,'Skeever Tail '),
+(0898,'Slaughterfish Egg'), 
+(0910,'Spriggan Sapling '),
+(0773,'Pufferfish'),
+(0773,'Skeever Hide '),
+(0670,'Prismarine Crystals'),
+(0480,'Red Mountain Flower '),
+(0226,'Nether Wart '),
+(0603,'Spider Eye'),
+(0505,'Tundra Cotton'), 
+(0555,'Redstone Dust '),
+(0463,'Void salt '),
+(0469,'Tacos'),
+(0392,'Slimeball'), 
+(0510,'Sugar'),
+(0442,'Totem Of Undying'), 
+(0425,"Willow's leaf");
+
+-- Stock récipient
+
+INSERT INTO stockrécipient VALUES ('Test Tube',800),('Ampoule',750),('Flask',600),('Pot',700),('Caldron',200);
+
+-- Stock diluant
+
+INSERT INTO stockdiluant VALUES ('Water',NULL),('Milk',800),('Redbull',500),('Vinegar',700),('Mineral Oil',500),('Honey',750),('Chloridric Acid' ,734),("Human's blood",50),("Goblin's snort",150),("Dragon's Blood",24);
+
+-- Invention potion
+
+INSERT INTO inventionpotion(Potion,NumPermis) VALUES ('Love',61),('Poison',62),('Smite',55),('Bravery',23),('Charisma',29),('Fire Resistance',14),('Cure Disease' ,63),("Flight",18),("Harming",36),("Instant Health",24),('Slowness',41),('Strength',9),('Swiftness',51),('Wall Protection',42);
+
+-- Commandes
+
+INSERT INTO commande
+VALUES(15486245, 3, NULL, "Onguent Of Charisma", 4, "Test Tube", NULL, NULL, 140
+),(48625975, 95, "Potion Of Wall Protection", 99, "Caldron", NULL, NULL, NULL, 247500
+),(21568497, 103, "Potion Of Love", 1, "Ampoule", NULL, NULL, NULL, 80
+),(51364985, 53, NULL, NULL, 15, NULL, "Chernobylite", 1, 365
+),(32568949, 24, "Potion Of Smite", 6, "Ampoule", NULL, NULL, NULL, 540
+),(51234684, 12, NULL, NULL, 32, NULL, "Slimeball", 56, 448
+),(06480482, 123, "Potion Of Fire resistance", 15, "Pot", NULL, NULL, NULL, 9000
+),(13068975, 70, "Potion Of Bravery", 7, "Flask", NULL, NULL, NULL, 2450
+),(01235818, 23, NULL, NULL, 3, NULL, "Ghast Tear", 39, 1560
+),(04651652, 112, "Potion Of Flight", 3, "Ampoule", NULL, NULL, NULL, 390
+),(51651085, 144, NULL, "Onguent Of Swiftness", 8, "Test Tube", NULL, NULL, 240
+),(61651065, 62, "Potion Of Poison", 74, "Pot", NULL, NULL, NULL, 38850
+),(06510651, 133, NULL, "Onguent Of Strength", 3, "Caldron", NULL, NULL, 6000
+),(35198461, 60, NULL, NULL, 68, NULL, "Cookie", 25, 200
+),(98465120, 131, "Potion Of Harming", 2, "Flask", NULL, NULL, NULL, 1000);
+
+
+END|
+
+# DELIMITER | 
+CREATE PROCEDURE CréerBackUp()
+BEGIN
+
+DROP DATABASE IF EXISTS BackUp;
+CREATE DATABASE IF NOT EXISTS BackUp;
+
+DROP TABLE IF EXISTS `Backup`.préparationpotion;
+DROP TABLE IF EXISTS `Backup`.préparationonguent;
+DROP TABLE IF EXISTS `Backup`.corbeillepréparationpotion;
+DROP TABLE IF EXISTS `Backup`.corbeillepréparationonguent;
+
+
+CREATE TABLE IF NOT EXISTS `Backup`.préparationpotion
+SELECT *
+FROM `Nouvelle BDD`.préparationpotion;
+
+CREATE TABLE IF NOT EXISTS `Backup`.préparationonguent
+SELECT Potion AS Onguent ,Ingrédient, OrdreIngrédient, FraicheurMinIngrédient, FraicheurMaxIngrédient, QuantitéIngrédient
+FROM préparationpotion;
+
+CREATE TABLE IF NOT EXISTS `BackUp`.corbeillepréparationpotion
+SELECT *
+FROM `Backup`.préparationpotion;
+
+CREATE TABLE IF NOT EXISTS `BackUp`.corbeillepréparationonguent
+SELECT *
+FROM `Backup`.préparationonguent;
+
+
+END|

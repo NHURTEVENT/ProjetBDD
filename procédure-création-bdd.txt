@@ -1,0 +1,204 @@
+DELIMITER |
+CREATE PROCEDURE CréerBDD()
+BEGIN
+
+DROP DATABASE IF EXISTS `Nouvelle BDD`;
+CREATE DATABASE IF NOT EXISTS `Nouvelle BDD`;
+
+
+DROP TABLE IF EXISTS `Nouvelle BDD`.Client;
+DROP TABLE IF EXISTS `Nouvelle BDD`.Commande;
+DROP TABLE IF EXISTS `Nouvelle BDD`.PréparationPotion;
+DROP TABLE IF EXISTS `Nouvelle BDD`.Potion;
+DROP TABLE IF EXISTS `Nouvelle BDD`.PréparationOnguent;
+DROP TABLE IF EXISTS `Nouvelle BDD`.Ingrédient;
+DROP TABLE IF EXISTS `Nouvelle BDD`.Onguent;
+DROP TABLE IF EXISTS `Nouvelle BDD`.StockIngrédient;
+DROP TABLE IF EXISTS `Nouvelle BDD`.Diluant;
+DROP TABLE IF EXISTS `Nouvelle BDD`.StockDiluant;
+DROP TABLE IF EXISTS `Nouvelle BDD`.Récipient;
+DROP TABLE IF EXISTS `Nouvelle BDD`.StockRécipient;
+DROP TABLE IF EXISTS `Nouvelle BDD`.Inventeur;
+DROP TABLE IF EXISTS `Nouvelle BDD`.InventionPotion;
+DROP TABLE IF EXISTS `Nouvelle BDD`.Fournisseur;
+DROP TABLE IF EXISTS `Nouvelle BDD`.FournitureIngrédient;
+DROP TABLE IF EXISTS `Nouvelle BDD`.PropositionRecette;
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Client (
+	IDClient INT(4) NOT NULL AUTO_INCREMENT,
+	NomClient VARCHAR(30),
+	PrenomClient VARCHAR (30),
+
+	CONSTRAINT pk_NumPermis PRIMARY KEY(IDClient)    
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Commande (
+	IDCommande INT(4) NOT NULL AUTO_INCREMENT,
+	IDClient INT(4),
+	Potion VARCHAR(30),
+	Onguent VARCHAR(30),
+	Quantité INT(3),
+	Récipient VARCHAR (30),
+	Ingrédient VARCHAR (30),
+	Fraîcheur INT(3) DEFAULT NULL,
+	Prix INT(3),
+
+	CONSTRAINT Fk_Ingrédient FOREIGN KEY (Ingrédient) 
+	REFERENCES Ingrédient(Ingrédient),
+	CONSTRAINT fk_Potion FOREIGN KEY (Potion) 
+	REFERENCES potion(Potion),
+	CONSTRAINT fk_Onguent FOREIGN KEY (Onguent)
+	REFERENCES Onguent(Onguent),
+	CONSTRAINT fk_Récipient FOREIGN KEY (Récipient)
+	REFERENCES Récipient(Récipient),
+	CONSTRAINT fk_Client FOREIGN KEY (IDClient) REFERENCES Client(IDClient),
+	CONSTRAINT pk_Commande PRIMARY KEY(IDCommande)
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.PréparationPotion (
+	Potion VARCHAR(50),
+	Ingrédient VARCHAR(30),
+	Diluant VARCHAR(30),
+	OrdreIngrédient INT(2),
+	FraicheurMinIngrédient INT(3),
+	FraicheurMaxIngrédient INT(3),
+	QuantitéIngrédient INT(20),
+	Température INT(3),
+
+	CONSTRAINT fk_NomPotion FOREIGN KEY (Potion) 
+	REFERENCES Potion(Potion) ,
+
+	CONSTRAINT fk_NomIngrédient FOREIGN KEY (Ingrédient) 
+	REFERENCES Ingrédient(Ingrédient),
+
+	CONSTRAINT pk_PréparationPotion PRIMARY KEY (Potion, Ingrédient) 
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Potion (
+    Potion VARCHAR(50),
+    PrixPotion INT(3),
+    CONSTRAINT Pk_Potion PRIMARY KEY (Potion) 
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.PréparationOnguent (
+	Onguent VARCHAR(50),
+	Ingrédient VARCHAR(30),
+	OrdreIngrédient INT(2),
+	FraicheurMinIngrédient INT(3),
+	FraicheurMaxIngrédient INT(3),
+	QuantitéIngrédient INT(20),
+
+	CONSTRAINT fk_Onguent FOREIGN KEY (Onguent) 
+	REFERENCES onguent(Onguent),
+
+	CONSTRAINT fk_Ingrédient FOREIGN KEY (Ingrédient) 
+	REFERENCES Ingrédient(Ingrédient),
+
+	CONSTRAINT pk_PréparationOnguent PRIMARY KEY (Onguent, Ingrédient) 
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Ingrédient (
+	Ingrédient VARCHAR(30),
+	PrixIngrédient INT(3),
+
+	CONSTRAINT Pk_ingrédient PRIMARY KEY(Ingrédient)
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Onguent (
+    Onguent VARCHAR(50),
+    PrixOnguent INT(3),
+    CONSTRAINT Pk_Potion PRIMARY KEY (Onguent) 
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.StockIngrédient (
+	Ingrédient VARCHAR(30),
+	QuantitéEnStock INT(3),
+	FraîcheurMax INT(3),
+	DateArrivée Date,
+
+	CONSTRAINT Fk_Ingrédient FOREIGN KEY (Ingrédient) REFERENCES Ingrédient(Ingrédient),
+	CONSTRAINT Pk_stock PRIMARY KEY(Ingrédient)
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Diluant(
+	Diluant VARCHAR(30),
+	PrixDiluant INT(3) ,
+
+	CONSTRAINT Pk_Diluant PRIMARY KEY (Diluant)
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.StockDiluant (
+	Diluant VARCHAR(30),
+	Stock INT(3),
+
+	CONSTRAINT Pk_StockDiluant PRIMARY KEY (Diluant)
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Récipient (
+	Récipient VARCHAR (20),
+	Prix INT(3),
+	CoefRécipient INT(3),
+
+	CONSTRAINT Pk_Récipient PRIMARY KEY (Récipient)
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.StockRécipient(
+	Récipient VARCHAR(30),
+	Stock INT(3),
+
+	CONSTRAINT Pk_StockRécipient PRIMARY KEY (Récipient)
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Inventeur(
+	NumPermis INT(4) NOT NULL AUTO_INCREMENT ,
+	NomInventeur VARCHAR(30),
+	PrenomInventeur VARCHAR (30),
+
+	CONSTRAINT pk_NumPermis PRIMARY KEY(NumPermis)    
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.InventionPotion (
+	NumPermis INT(4),
+	Potion VARCHAR (50),
+
+	CONSTRAINT fk_Inventeur FOREIGN KEY (NumPermis) REFERENCES inventeur(NumPermis),
+	CONSTRAINT fk_Potion FOREIGN KEY (Potion) REFERENCES potion(Potion),
+	CONSTRAINT pk_InventionPotion PRIMARY KEY (NumPermis,Potion)
+);
+
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.Fournisseur(
+IDFournisseur INT(4),
+NomFournisseur VARCHAR(30), 
+PrenomFournisseur VARCHAR(30), 
+CONSTRAINT Pk_Fournisseur PRIMARY KEY (IDFournisseur) 
+);
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.FournitureIngrédient(
+IDFournisseur INT(4),
+Ingrédient VARCHAR(30),
+CONSTRAINT Fk_Fournisseur FOREIGN KEY (IDFournisseur) REFERENCES fournisseur(IDFournisseur),
+CONSTRAINT Fk_Ingrédiet FOREIGN KEY (Ingrédient) REFERENCES ingrédient(ingrédient), 
+CONSTRAINT Pk_FournitureIngrédient PRIMARY KEY (IDFournisseur,Ingrédient) );
+
+
+CREATE TABLE IF NOT EXISTS `Nouvelle BDD`.PropositionRecette
+SELECT *
+FROM `Nouvelle BDD`.PréparationPotion;
+
+END |
